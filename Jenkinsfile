@@ -30,10 +30,10 @@ node("build"){
 		
 		sh'''
 			echo "Removing the existing package from tomcat server"
-			ssh ec2-user@18.191.192.95 rm -rf $HOME/tomcat9/webapps/DevOpsWebApp*
+			ssh ec2-user@3.17.62.252 rm -rf $HOME/tomcat9/webapps/DevOpsWebApp*
 			
 			echo "Deploy(copy) war to tomcat server"
-			scp target/DevOpsWebApp*.war ec2-user@18.191.192.95:$HOME/tomcat9/webapps/
+			scp target/DevOpsWebApp*.war ec2-user@3.17.62.252:$HOME/tomcat9/webapps/
 
 		'''
 		/*
